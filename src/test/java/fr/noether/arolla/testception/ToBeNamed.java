@@ -1,7 +1,5 @@
 package fr.noether.arolla.testception;
 
-import fr.noether.arolla.testception.MyTestClass;
-
 public class ToBeNamed {
     public static void testMethodShouldBeRun() {
         var testMethodShouldBeCalled = new MyTestClass();
@@ -17,5 +15,21 @@ public class ToBeNamed {
         }
 
         System.out.println("\u001B[32mTest MethodShouldBeCalled : OK");
+    }
+
+    static void testMethodShouldBeSetup() {
+        var testMethodShouldBeSetup = new MyTestClass();
+
+        if(testMethodShouldBeSetup.hasBeenSetUp()) {
+            throw new RuntimeException("Test Method should have not been setup yet.");
+        }
+
+        testMethodShouldBeSetup.run(MyTestClass::thisTestMethodShouldBeSetUp);
+
+        if (!testMethodShouldBeSetup.hasBeenSetUp()) {
+            throw new RuntimeException("Test Method should have been setup.");
+        }
+
+        System.out.println("\u001B[32mTest MethodShouldBeSetup : OK");
     }
 }
