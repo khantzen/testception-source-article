@@ -10,6 +10,7 @@ public class TestRunner {
             throw new RuntimeException("Test method should have not been called yet.");
         }
 
+        testMethodShouldBeCalled.setUp();
         testMethodShouldBeCalled.thisTestMethodShouldBeCalled();
 
         if (!testMethodShouldBeCalled.hasBeenCalled()) {
