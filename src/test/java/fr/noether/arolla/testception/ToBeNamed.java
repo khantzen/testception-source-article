@@ -1,7 +1,7 @@
 package fr.noether.arolla.testception;
 
 public class ToBeNamed {
-    public static void testMethodShouldBeRun() {
+    public void testMethodShouldBeRun() {
         var testMethodShouldBeCalled = new MyTestClass();
 
         if (testMethodShouldBeCalled.hasBeenCalled()) {
@@ -17,7 +17,7 @@ public class ToBeNamed {
         System.out.println("\u001B[32mTest MethodShouldBeCalled : OK");
     }
 
-    static void testMethodShouldBeSetup() {
+    public void testMethodShouldBeSetup() {
         var testMethodShouldBeSetup = new MyTestClass();
 
         if(testMethodShouldBeSetup.hasBeenSetUp()) {
