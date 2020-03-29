@@ -1,11 +1,17 @@
 package fr.noether.arolla.testception;
 
 public class MyTestClass {
-    public void thisTestMethodShouldBeCalled() {
+    private boolean hasBeenCalled;
 
+    public MyTestClass() {
+        this.hasBeenCalled = false;
+    }
+
+    public void thisTestMethodShouldBeCalled() {
+        this.hasBeenCalled = true;
     }
 
     public boolean hasBeenCalled() {
-        return true;
+        return this.hasBeenCalled;
     }
 }
