@@ -3,7 +3,7 @@ package fr.noether.arolla.testception;
 public class TestRunner {
 
     public static void main(String[] args) {
-        //---- Test Should be Setup
+        //---- Test Should be Called ----
         var testMethodShouldBeCalled = new MyTestClass();
 
         if (testMethodShouldBeCalled.hasBeenCalled()) {
