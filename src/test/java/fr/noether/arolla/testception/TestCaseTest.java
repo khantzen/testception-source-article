@@ -1,5 +1,7 @@
 package fr.noether.arolla.testception;
 
+import fr.noether.arolla.testception.mock.MyTestClass;
+
 import java.util.function.Consumer;
 
 public class TestCaseTest extends TestCase {

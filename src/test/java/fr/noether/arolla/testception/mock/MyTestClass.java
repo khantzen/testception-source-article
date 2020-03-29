@@ -1,4 +1,6 @@
-package fr.noether.arolla.testception;
+package fr.noether.arolla.testception.mock;
+
+import fr.noether.arolla.testception.TestCase;
 
 import java.util.function.Consumer;
 
