@@ -1,5 +1,7 @@
 package fr.noether.arolla.testception;
 
+import java.util.function.Consumer;
+
 public class ToBeNamed {
     public void testMethodShouldBeRun() {
         var testMethodShouldBeCalled = new MyTestClass();
@@ -31,5 +33,10 @@ public class ToBeNamed {
         }
 
         System.out.println("\u001B[32mTest MethodShouldBeSetup : OK");
+    }
+
+    public void run(Consumer<ToBeNamed> testMethod) {
+        testMethod.accept(this);
+
     }
 }

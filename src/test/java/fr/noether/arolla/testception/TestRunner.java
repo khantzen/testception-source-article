@@ -4,9 +4,8 @@ public class TestRunner {
 
     public static void main(String[] args) {
         var testRunner = new ToBeNamed();
-
         testRunner.run(ToBeNamed::testMethodShouldBeRun);
-        testRunner.testMethodShouldBeSetup();
+        testRunner.run(ToBeNamed::testMethodShouldBeSetup);
     }
 
 }
