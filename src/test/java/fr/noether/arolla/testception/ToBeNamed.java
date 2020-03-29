@@ -2,13 +2,8 @@ package fr.noether.arolla.testception;
 
 import java.util.function.Consumer;
 
-public class ToBeNamed {
+public class ToBeNamed extends TestCase {
     public void setUp() {}
-
-    public void run(Consumer<ToBeNamed> testMethod) {
-        this.setUp();
-        testMethod.accept(this);
-    }
 
     public void testMethodShouldBeRun() {
         var testMethodShouldBeCalled = new MyTestClass();
