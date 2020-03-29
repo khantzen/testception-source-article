@@ -16,7 +16,7 @@ public class TestRunner {
             throw new RuntimeException("Test method should have been called.");
         }
 
-        System.out.println("\u001B[32mTest OK");
+        System.out.println("\u001B[32mTest MethodShouldBeCalled : OK");
 
         //---- Test Should be Setup ----
         var testMethodShouldBeSetup = new MyTestClass();
@@ -28,10 +28,10 @@ public class TestRunner {
         testMethodShouldBeSetup.setUp();
         testMethodShouldBeSetup.thisTestMethodShouldBeSetUp();
 
-        if (!testMethodShouldBeSetup.hasBeenSetup()) {
+        if (!testMethodShouldBeSetup.hasBeenSetUp()) {
             throw new RuntimeException("Test Method should have been setup.");
         }
 
-        System.out.println("\u001B[32mTest OK");
+        System.out.println("\u001B[32mTest MethodShouldBeSetup : OK");
     }
 }
