@@ -2,8 +2,8 @@ package fr.noether.arolla.testception;
 
 import java.util.function.Consumer;
 
-public class ToBeNamed extends TestCase {
-    public ToBeNamed(Consumer<ToBeNamed> testMethod) {
+public class TestCaseTest extends TestCase {
+    public TestCaseTest(Consumer<TestCaseTest> testMethod) {
         super(testMethod);
     }
 
