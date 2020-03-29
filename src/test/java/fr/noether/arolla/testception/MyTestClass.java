@@ -1,8 +1,6 @@
 package fr.noether.arolla.testception;
 
-import java.util.function.Consumer;
-
-public class MyTestClass {
+public class MyTestClass extends TestCase {
     private boolean hasBeenCalled;
     private boolean setUp;
 
@@ -11,11 +9,7 @@ public class MyTestClass {
         this.setUp = false;
     }
 
-    public void run(Consumer<MyTestClass> testMethod) {
-        this.setUp();
-        testMethod.accept(this);
-    }
-
+    @Override
     public void setUp() {
         this.setUp = true;
     }

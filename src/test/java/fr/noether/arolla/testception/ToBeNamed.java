@@ -17,7 +17,9 @@ public class ToBeNamed {
             throw new RuntimeException("Test method should have not been called yet.");
         }
 
-        testMethodShouldBeCalled.run(MyTestClass::thisTestMethodShouldBeCalled);
+        Consumer<MyTestClass> thisTestMethodShouldBeCalled = MyTestClass::thisTestMethodShouldBeCalled;
+
+        testMethodShouldBeCalled.run(thisTestMethodShouldBeCalled);
 
         if (!testMethodShouldBeCalled.hasBeenCalled()) {
             throw new RuntimeException("Test method should have been called.");
@@ -33,7 +35,8 @@ public class ToBeNamed {
             throw new RuntimeException("Test Method should have not been setup yet.");
         }
 
-        testMethodShouldBeSetup.run(MyTestClass::thisTestMethodShouldBeSetUp);
+        Consumer<MyTestClass> thisTestMethodShouldBeSetUp = MyTestClass::thisTestMethodShouldBeSetUp;
+        testMethodShouldBeSetup.run(thisTestMethodShouldBeSetUp);
 
         if (!testMethodShouldBeSetup.hasBeenSetUp()) {
             throw new RuntimeException("Test Method should have been setup.");
