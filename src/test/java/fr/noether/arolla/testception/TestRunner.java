@@ -3,15 +3,14 @@ package fr.noether.arolla.testception;
 public class TestRunner {
 
     public static void main(String[] args) {
-        //---- Test Should be Setup
+        //---- Test Should be Called ----
         var testMethodShouldBeCalled = new MyTestClass();
 
         if (testMethodShouldBeCalled.hasBeenCalled()) {
             throw new RuntimeException("Test method should have not been called yet.");
         }
 
-        testMethodShouldBeCalled.setUp();
-        testMethodShouldBeCalled.thisTestMethodShouldBeCalled();
+        testMethodShouldBeCalled.run(MyTestClass::thisTestMethodShouldBeCalled);
 
         if (!testMethodShouldBeCalled.hasBeenCalled()) {
             throw new RuntimeException("Test method should have been called.");
@@ -26,8 +25,7 @@ public class TestRunner {
             throw new RuntimeException("Test Method should have not been setup yet.");
         }
 
-        testMethodShouldBeSetup.setUp();
-        testMethodShouldBeSetup.thisTestMethodShouldBeSetUp();
+        testMethodShouldBeSetup.run(MyTestClass::thisTestMethodShouldBeSetUp);
 
         if (!testMethodShouldBeSetup.hasBeenSetUp()) {
             throw new RuntimeException("Test Method should have been setup.");
@@ -35,4 +33,5 @@ public class TestRunner {
 
         System.out.println("\u001B[32mTest MethodShouldBeSetup : OK");
     }
+
 }
