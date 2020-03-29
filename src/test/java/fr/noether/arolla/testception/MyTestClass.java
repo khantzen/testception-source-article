@@ -1,10 +1,13 @@
 package fr.noether.arolla.testception;
 
+import java.util.function.Consumer;
+
 public class MyTestClass extends TestCase {
     private boolean hasBeenCalled;
     private boolean setUp;
 
-    public MyTestClass() {
+    public MyTestClass(Consumer<MyTestClass> testMethod) {
+        super(testMethod);
         this.hasBeenCalled = false;
         this.setUp = false;
     }

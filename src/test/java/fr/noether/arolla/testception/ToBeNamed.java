@@ -3,18 +3,20 @@ package fr.noether.arolla.testception;
 import java.util.function.Consumer;
 
 public class ToBeNamed extends TestCase {
+    public ToBeNamed(Consumer<ToBeNamed> testMethod) {
+        super(testMethod);
+    }
+
     public void setUp() {}
 
     public void testMethodShouldBeRun() {
-        var testMethodShouldBeCalled = new MyTestClass();
+        var testMethodShouldBeCalled = new MyTestClass(MyTestClass::thisTestMethodShouldBeCalled);
 
         if (testMethodShouldBeCalled.hasBeenCalled()) {
             throw new RuntimeException("Test method should have not been called yet.");
         }
 
-        Consumer<MyTestClass> thisTestMethodShouldBeCalled = MyTestClass::thisTestMethodShouldBeCalled;
-
-        testMethodShouldBeCalled.run(thisTestMethodShouldBeCalled);
+        testMethodShouldBeCalled.run();
 
         if (!testMethodShouldBeCalled.hasBeenCalled()) {
             throw new RuntimeException("Test method should have been called.");
@@ -24,14 +26,13 @@ public class ToBeNamed extends TestCase {
     }
 
     public void testMethodShouldBeSetup() {
-        var testMethodShouldBeSetup = new MyTestClass();
+        var testMethodShouldBeSetup = new MyTestClass(MyTestClass::thisTestMethodShouldBeSetUp);
 
         if(testMethodShouldBeSetup.hasBeenSetUp()) {
             throw new RuntimeException("Test Method should have not been setup yet.");
         }
 
-        Consumer<MyTestClass> thisTestMethodShouldBeSetUp = MyTestClass::thisTestMethodShouldBeSetUp;
-        testMethodShouldBeSetup.run(thisTestMethodShouldBeSetUp);
+        testMethodShouldBeSetup.run();
 
         if (!testMethodShouldBeSetup.hasBeenSetUp()) {
             throw new RuntimeException("Test Method should have been setup.");
