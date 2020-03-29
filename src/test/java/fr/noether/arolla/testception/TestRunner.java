@@ -3,9 +3,8 @@ package fr.noether.arolla.testception;
 public class TestRunner {
 
     public static void main(String[] args) {
-        var testRunner = new ToBeNamed();
-        testRunner.testMethodShouldBeRun();
-        testRunner.testMethodShouldBeSetup();
+        new TestCaseTest(TestCaseTest::testMethodShouldBeRun).run();
+        new TestCaseTest(TestCaseTest::testMethodShouldBeSetup).run();
     }
 
 }
