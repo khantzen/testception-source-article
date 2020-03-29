@@ -1,5 +1,7 @@
 package fr.noether.arolla.testception;
 
+import java.util.function.Consumer;
+
 public class MyTestClass {
     private boolean hasBeenCalled;
     private boolean setUp;
@@ -7,6 +9,11 @@ public class MyTestClass {
     public MyTestClass() {
         this.hasBeenCalled = false;
         this.setUp = false;
+    }
+
+    static void run(MyTestClass myTest, Consumer<MyTestClass> testMethod) {
+        myTest.setUp();
+        testMethod.accept(myTest);
     }
 
     public void setUp() {
