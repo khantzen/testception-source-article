@@ -6,6 +6,6 @@ public class MyTestClass {
     }
 
     public boolean hasBeenCalled() {
-        return false;
+        return true;
     }
 }
