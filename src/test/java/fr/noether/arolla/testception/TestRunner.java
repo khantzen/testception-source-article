@@ -10,7 +10,7 @@ public class TestRunner {
             throw new RuntimeException("Test method should have not been called yet.");
         }
 
-        MyTestClass.run(testMethodShouldBeCalled, MyTestClass::thisTestMethodShouldBeCalled);
+        testMethodShouldBeCalled.run(MyTestClass::thisTestMethodShouldBeCalled);
 
         if (!testMethodShouldBeCalled.hasBeenCalled()) {
             throw new RuntimeException("Test method should have been called.");
@@ -25,7 +25,7 @@ public class TestRunner {
             throw new RuntimeException("Test Method should have not been setup yet.");
         }
 
-        MyTestClass.run(testMethodShouldBeSetup, MyTestClass::thisTestMethodShouldBeSetUp);
+        testMethodShouldBeSetup.run(MyTestClass::thisTestMethodShouldBeSetUp);
 
         if (!testMethodShouldBeSetup.hasBeenSetUp()) {
             throw new RuntimeException("Test Method should have been setup.");

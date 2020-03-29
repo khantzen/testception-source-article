@@ -11,9 +11,9 @@ public class MyTestClass {
         this.setUp = false;
     }
 
-    static void run(MyTestClass myTest, Consumer<MyTestClass> testMethod) {
-        myTest.setUp();
-        testMethod.accept(myTest);
+    public void run(Consumer<MyTestClass> testMethod) {
+        this.setUp();
+        testMethod.accept(this);
     }
 
     public void setUp() {
