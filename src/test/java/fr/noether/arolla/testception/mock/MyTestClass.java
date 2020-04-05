@@ -34,4 +34,8 @@ public class MyTestClass extends TestCase {
     public boolean hasBeenSetUp() {
         return this.setUp;
     }
+
+    public String log() {
+        return "null";
+    }
 }
