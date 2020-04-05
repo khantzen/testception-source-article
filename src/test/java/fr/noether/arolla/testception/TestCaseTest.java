@@ -22,4 +22,16 @@ public class TestCaseTest extends TestCase {
 
         System.out.println("\u001B[32mTest MethodShouldBeSetupBeforeRun : OK");
     }
+
+    public void testMethodShouldBeTearDownAfterRun() {
+        var testMethodShouldBeSetupBeforeRun = new MyTestClass(MyTestClass::thisTestMethodShouldBeSetUp);
+
+        testMethodShouldBeSetupBeforeRun.run();
+
+        if (!testMethodShouldBeSetupBeforeRun.log().equals("setup run teardown")) {
+            throw new RuntimeException("Test method should have been teardown after run");
+        }
+
+        System.out.println("\u001B[32mTest MethodShouldBeTearDownAfterRun : OK");
+    }
 }
