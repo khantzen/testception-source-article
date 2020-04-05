@@ -36,6 +36,6 @@ public class MyTestClass extends TestCase {
     }
 
     public String log() {
-        return "null";
+        return "setup run";
     }
 }
