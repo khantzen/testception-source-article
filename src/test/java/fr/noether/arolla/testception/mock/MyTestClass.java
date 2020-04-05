@@ -19,7 +19,7 @@ public class MyTestClass extends TestCase {
     @Override
     public void setUp() {
         this.setUp = true;
-        this.log += "setup";
+        this.log = "setup";
     }
 
     public void thisTestMethodShouldBeCalled() {
@@ -27,7 +27,7 @@ public class MyTestClass extends TestCase {
     }
 
     public void thisTestMethodShouldBeSetUp() {
-
+        this.log += " run";
     }
 
     public boolean hasBeenCalled() {
@@ -39,6 +39,6 @@ public class MyTestClass extends TestCase {
     }
 
     public String log() {
-        return this.log + " run";
+        return this.log;
     }
 }
