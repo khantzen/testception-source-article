@@ -13,7 +13,7 @@ public class TestCase {
     protected void setUp() {}
 
     public void run() {
-        this.setUp();
         testMethod.accept(this);
+        this.setUp();
     }
 }
