@@ -16,7 +16,7 @@ public class TestCaseTest extends TestCase {
 
         testMethodShouldBeSetupBeforeRun.run();
 
-        if (!testMethodShouldBeSetupBeforeRun.log().equals("setup run")) {
+        if (!testMethodShouldBeSetupBeforeRun.log().equals("setup run teardown")) {
             throw new RuntimeException("Test method should have been setup before run");
         }
 

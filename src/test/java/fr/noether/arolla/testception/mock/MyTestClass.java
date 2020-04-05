@@ -24,4 +24,9 @@ public class MyTestClass extends TestCase {
     public String log() {
         return this.log;
     }
+
+    @Override
+    public void tearDown() {
+        this.log += " teardown";
+    }
 }

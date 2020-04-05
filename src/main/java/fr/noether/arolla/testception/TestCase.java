@@ -12,8 +12,11 @@ public class TestCase {
 
     protected void setUp() {}
 
+    protected void tearDown() {}
+
     public void run() {
         this.setUp();
         testMethod.accept(this);
+        this.tearDown();
     }
 }
